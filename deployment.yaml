@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: notes-app-deployment
+  name: notes-app-deployment_auto
   labels:
     app: notes-app
 spec:
@@ -15,7 +15,7 @@ spec:
         app: notes-app
     spec:
       containers:
-      - name: notes-app-deployment
+      - name: notes-app-deployment_auto
         image: iwalewa065/notes-app
         resources:
           requests:
