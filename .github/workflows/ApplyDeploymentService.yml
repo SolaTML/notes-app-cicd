@@ -1,0 +1,30 @@
+name: Apply Kubernetes Deployment and Service
+
+on:
+  workflow_dispatch  # This allows you to manually trigger the workflow.
+
+jobs:
+  deploy:
+    runs-on: self-hosted  # Specify your self-hosted runner.
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3  # Checks out your code from the repository.
+
+      - name: Set up kubectl
+        run: |
+          # Set up the kubeconfig for the self-hosted runner.
+          export KUBECONFIG=/home/master/.kube/config
+          kubectl cluster-info  # Verify connectivity to the cluster.
+
+      - name: Apply Kubernetes deployment and service
+        run: |
+          # Navigate to the directory containing the YAML files.
+          cd /home/master/actions-runner/_work/notes-app-cicd/notes-app-cicd
+          
+          # Apply the deployment and service files to the Kubernetes cluster.
+          kubectl apply -f deployment.yaml
+          kubectl apply -f service.yaml
+          
+          # Verify the status of the pods after deployment.
+          kubectl get pods -A
