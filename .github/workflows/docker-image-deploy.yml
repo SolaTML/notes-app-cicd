@@ -3,8 +3,8 @@ name: Deploy Docker Image CI
 on:
   workflow_dispatch
 
-env:
-  DOCKER_VERSION: latest
+#env:
+  #DOCKER_VERSION: latest
 
 jobs:
 
