@@ -3,11 +3,11 @@ apiVersion: v1
 kind: Service
 metadata:
  # Service name
- name: notes-app-deployment-auto
+ name: notes-app-deployment-auto1
 spec:
  selector:
    # Selector for Pods
-   app: notes-app-auto
+   app: notes-app-auto1
  ports:
    # Port Map
  - port: 80
