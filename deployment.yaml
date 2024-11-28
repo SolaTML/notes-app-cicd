@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: notes-app-deployment-auto
+  name: notes-app-deployment-auto1
   labels:
-    app: notes-app-auto
+    app: notes-app-auto1
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: notes-app-auto
+      app: notes-app-auto1
   template:
     metadata:
       labels:
-        app: notes-app-auto
+        app: notes-app-auto1
     spec:
       containers:
-      - name: notes-app-deployment-auto
+      - name: notes-app-deployment-auto1
         image: iwalewa065/notes-app
         resources:
           requests:
