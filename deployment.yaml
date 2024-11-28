@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: notes-app-deployment-auto
   labels:
-    app: notes-app
+    app: notes-app-auto
 spec:
   replicas: 2
   selector:
@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: notes-app
+        app: notes-app-auto
     spec:
       containers:
       - name: notes-app-deployment-auto
